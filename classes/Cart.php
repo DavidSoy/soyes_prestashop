@@ -1635,7 +1635,7 @@ class CartCore extends ObjectModel
         if (!Cache::isStored($cache_id)) {
             $result = (bool) Db::getInstance()->getValue('SELECT count(*) FROM `' . _DB_PREFIX_ . 'orders` WHERE `id_cart` = ' . (int) $this->id);
 
-            if($result) {
+            if ($result) {
                 Cache::store($cache_id, $result);
             }
 
